@@ -9,17 +9,27 @@
     <name>HBase support for Cascading</name>
 
     <properties>
-        <cascading.version>2.0.8</cascading.version>
+        <cascading.version>2.1.4</cascading.version>
         <hbase.version>0.94.2</hbase.version>
     </properties>
 
     <dependencies>
         <dependency>
+            <groupId>org.apache.hadoop</groupId>
+            <artifactId>hadoop-core</artifactId>
+            <version>1.0.4</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.hbase</groupId>
+            <artifactId>hbase</artifactId>
+            <version>${hbase.version}</version>
+        </dependency>
+        <dependency>
             <groupId>cascading</groupId>
             <artifactId>cascading-core</artifactId>
             <version>${cascading.version}</version>
         </dependency>
-
         <dependency>
             <groupId>cascading</groupId>
             <artifactId>cascading-local</artifactId>
@@ -43,11 +53,6 @@
             <artifactId>cascading-platform</artifactId>
             <version>${cascading.version}</version>
             <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.hbase</groupId>
-            <artifactId>hbase</artifactId>
-            <version>${hbase.version}</version>
         </dependency>
     </dependencies>
 
